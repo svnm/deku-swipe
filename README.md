@@ -69,7 +69,7 @@ render(app, document.getElementById('root'))
 
 - **continuous** Boolean *(default:true)* - create an infinite feel with no endpoints
 
-- *callback** Function - runs at slide change.
+- **callback** Function - runs at slide change.
 
 - **transitionEnd** Function - runs at the end slide transition.
 
