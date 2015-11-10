@@ -1,4 +1,8 @@
 # deku-swipe
+
+[![npm version](https://badge.fury.io/js/deku-swipe.svg)](https://badge.fury.io/js/deku-swipe)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 [Brad Birdsall](https://github.com/thebird)'s [Swipe.js](http://swipejs.com) as a deku component
 
 ## Installation
