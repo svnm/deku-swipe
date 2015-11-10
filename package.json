@@ -1,0 +1,64 @@
+{
+  "name": "deku-swipe",
+  "version": "0.0.1",
+  "description": "Swipe.js as a deku component",
+  "main": "lib/swipe.js",
+  "jsnext:main": "src/swipe.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StevenIseki/deku-swipe.git"
+  },
+  "author": "Steven Iseki <stevenisekimartin@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "deku": "^0.5.6"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "swipe-js-iso": "^2.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.3.0",
+    "babel-core": "^5.6.7",
+    "babel-eslint": "^4.1.4",
+    "babel-loader": "^5.1.4",
+    "express": "^4.7.2",
+    "pre-commit": "^1.1.2",
+    "standard": "^5.3.1",
+    "webpack": "^1.9.12",
+    "deku": "^0.5.6",
+    "magic-virtual-element": "^1.0.6"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "example": "webpack --config ./example/webpack.config.js",
+    "prepublish": "npm run build",
+    "serve": "node ./example/server.js",
+    "start": "npm run example && npm run serve",
+    "style": "standard",
+    "test": "npm run build && ava test/*.js"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "lib",
+      "example/public"
+    ]
+  },
+  "keywords": [
+    "javascript",
+    "deku",
+    "dekujs",
+    "deku-component",
+    "swipe",
+    "deku-swipe",
+    "deku-slide",
+    "deku-swiper",
+    "deku swipe",
+    "swipe component",
+    "swiper component"
+  ]
+}
