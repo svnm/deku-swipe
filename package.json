@@ -1,6 +1,6 @@
 {
   "name": "deku-swipe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Swipe.js as a deku component",
   "main": "lib/swipe.js",
   "repository": {
