@@ -1,99 +1,115 @@
-/** @jsx dom */
-import dom from 'magic-virtual-element'
-import Swipe from 'swipe-js-iso'
+/** @jsx element */
 
-const propTypes = {
-  classPrefix: {
-    type: 'string'
+import SwipeJs from 'swipe-js-iso'
+import element from 'virtual-element'
+
+let Swipe = {
+
+  initialState () {
+    return { secondsElapsed: 0 }
   },
-  startSlide: {
-    type: 'number'
+
+  propTypes: {
+    classPrefix: {
+      type: 'string'
+    },
+    startSlide: {
+      type: 'number'
+    },
+    slideToIndex: {
+      type: 'number'
+    },
+    speed: {
+      type: 'number'
+    },
+    auto: {
+      type: 'number'
+    },
+    continuous: {
+      type: 'boolean'
+    },
+    callback: {
+      type: 'function'
+    },
+    transitionEnd: {
+      type: 'function'
+    }
   },
-  slideToIndex: {
-    type: 'number'
+
+  defaultProps: {
+    classPrefix: 'deku-swipe'
   },
-  speed: {
-    type: 'number'
-  },
-  auto: {
-    type: 'number'
-  },
-  continuous: {
-    type: 'boolean'
-  },
-  callback: {
-    type: 'function'
-  },
-  transitionEnd: {
-    type: 'function'
-  }
-}
 
-const defaultProps = {
-  classPrefix: 'deku-swipe'
-}
+  render (component) {
+    let { props, state } = component;
 
-function initialState () {
-  return {}
-}
+    const {arrows, arrowNext, arrowPrev, children, classPrefix } = props
 
-function afterMount ({props}, el, setState) {
+    function getArrows() {
+      if (!arrows) return null
 
-  const {arrows, startSlide, speed, auto, continuous, callback, transitionEnd, classPrefix} = props
-
-  const swipe = Swipe(document.getElementById('deku-swipe'), {
-    startSlide: startSlide,
-    speed: speed,
-    auto: auto,
-    continuous: continuous,
-    callback: callback,
-    transitionEnd: transitionEnd
-  })
-
-  if (arrows) {
-    const prev = el.querySelector(`.${classPrefix}__arrows--prev`)
-    const next = el.querySelector(`.${classPrefix}__arrows--next`)
-
-    prev.addEventListener('click', e => {
-      e.preventDefault()
-      swipe.prev()
-    })
-
-    next.addEventListener('click', e => {
-      e.preventDefault()
-      swipe.next()
-    })
-  }
-}
-
-function render({props, state}) {
-  const {arrows, arrowNext, arrowPrev, children, classPrefix } = props
-
-  function getArrows() {
-    if (!arrows) {
-      return null
+      return (
+        <div class={`${classPrefix}__arrows`} class='swipe-buttons'>
+          <button class={`${classPrefix}__arrows  ${classPrefix}__arrows--prev`}>
+            {arrowPrev || null}
+          </button>
+          <button class={`${classPrefix}__arrows  ${classPrefix}__arrows--next`}>
+            {arrowNext || null}
+          </button>
+        </div>
+      )
     }
 
     return (
-      <div class={`${classPrefix}__arrows`} class='swipe-buttons'>
-        <button class={`${classPrefix}__arrows  ${classPrefix}__arrows--prev`}>
-          {arrowPrev || null}
-        </button>
-        <button class={`${classPrefix}__arrows  ${classPrefix}__arrows--next`}>
-          {arrowNext || null}
-        </button>
-      </div>
+        <div id='deku-swipe' class={`${classPrefix}`}>
+          <div class={`${classPrefix}__wrap`} >
+            {children}
+          </div>
+          {getArrows()}
+        </div>
     )
+
+  },
+
+  afterUpdate (component) {
+    let { props, state } = component;
+  },
+
+  afterMount (component, el, setState) {
+
+    let { props, state } = component;
+
+    const {arrows, startSlide, speed, auto, continuous, callback, transitionEnd, classPrefix} = props
+
+    const swipe = SwipeJs(document.getElementById('deku-swipe'), {
+      startSlide: startSlide,
+      speed: speed,
+      auto: auto,
+      continuous: continuous,
+      callback: callback,
+      transitionEnd: transitionEnd
+    })
+
+    if (arrows) {
+      const prev = el.querySelector(`.${classPrefix}__arrows--prev`)
+      const next = el.querySelector(`.${classPrefix}__arrows--next`)
+
+      prev.addEventListener('click', e => {
+        e.preventDefault()
+        swipe.prev()
+      })
+
+      next.addEventListener('click', e => {
+        e.preventDefault()
+        swipe.next()
+      })
+    }
+  },
+
+  beforeUnmount (component) {
+    clearInterval(component.interval);
   }
 
-  return (
-      <div id='deku-swipe' class={`${classPrefix}`}>
-        <div class={`${classPrefix}__wrap`} >
-          {children}
-        </div>
-        {getArrows()}
-      </div>
-  )
 }
 
-export default {afterMount, initialState, propTypes, defaultProps, render}
+export default Swipe

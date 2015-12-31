@@ -1,5 +1,5 @@
 # deku-swipe
-[Brad Birdsall](https://github.com/thebird)'s [Swipe.js](http://swipejs.com) as a deku component
+[Swipe.js](http://swipejs.com) as a deku component
 
 ## Installation
 
@@ -13,7 +13,7 @@ npm install deku-swipe
 
 ## Usage
 
-```javascript
+```jsx
 
 /** @jsx dom */
 import dom from 'magic-virtual-element'

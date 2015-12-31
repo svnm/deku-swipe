@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "public";
+/******/ 	__webpack_require__.p = "/public/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -44,57 +44,63 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx dom */
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _magicVirtualElement = __webpack_require__(1);
-	
-	var _magicVirtualElement2 = _interopRequireDefault(_magicVirtualElement);
-	
-	var _deku = __webpack_require__(26);
-	
-	var _srcSwipeJs = __webpack_require__(55);
-	
-	var _srcSwipeJs2 = _interopRequireDefault(_srcSwipeJs);
-	
-	var app = (0, _deku.tree)((0, _magicVirtualElement2['default'])(
-	  _srcSwipeJs2['default'],
-	  { arrows: true, startSlide: 2, speed: 1200, arrowPrev: 'ey prev', arrowNext: 'ey next' },
-	  (0, _magicVirtualElement2['default'])(
-	    'div',
-	    null,
-	    'slide 0'
-	  ),
-	  (0, _magicVirtualElement2['default'])(
-	    'div',
-	    null,
-	    'slide 1'
-	  ),
-	  (0, _magicVirtualElement2['default'])(
-	    'div',
-	    null,
-	    'slide 2'
-	  ),
-	  (0, _magicVirtualElement2['default'])(
-	    'div',
-	    null,
-	    'another slide'
-	  )
-	));
-	
-	(0, _deku.render)(app, document.getElementById('root'));
+	module.exports = __webpack_require__(1);
+
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toStyle = __webpack_require__(2).string
-	var classnames = __webpack_require__(19)
-	var element = __webpack_require__(20)
-	var type = __webpack_require__(24)
-	var slice = __webpack_require__(25)
+	'use strict';
+	
+	var _magicVirtualElement = __webpack_require__(2);
+	
+	var _magicVirtualElement2 = _interopRequireDefault(_magicVirtualElement);
+	
+	var _deku = __webpack_require__(27);
+	
+	var _swipe = __webpack_require__(56);
+	
+	var _swipe2 = _interopRequireDefault(_swipe);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var app = (0, _deku.tree)((0, _magicVirtualElement2.default)(
+	  _swipe2.default,
+	  { arrows: true, startSlide: 2, speed: 1200, arrowPrev: 'ey prev', arrowNext: 'ey next' },
+	  (0, _magicVirtualElement2.default)(
+	    'div',
+	    null,
+	    'slide 0'
+	  ),
+	  (0, _magicVirtualElement2.default)(
+	    'div',
+	    null,
+	    'slide 1'
+	  ),
+	  (0, _magicVirtualElement2.default)(
+	    'div',
+	    null,
+	    'slide 2'
+	  ),
+	  (0, _magicVirtualElement2.default)(
+	    'div',
+	    null,
+	    'another slide'
+	  )
+	)); /** @jsx dom */
+	
+	(0, _deku.render)(app, document.getElementById('root'));
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toStyle = __webpack_require__(3).string
+	var classnames = __webpack_require__(20)
+	var element = __webpack_require__(21)
+	var type = __webpack_require__(25)
+	var slice = __webpack_require__(26)
 	
 	module.exports = function (t, attributes, children) {
 	
@@ -123,20 +129,20 @@
 
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
 	module.exports = {
-	   prefixProperties: __webpack_require__(3) ,
-	   cssUnitless: __webpack_require__(4) ,
-	   object: __webpack_require__(5),
-	   string: __webpack_require__(18)
+	   prefixProperties: __webpack_require__(4) ,
+	   cssUnitless: __webpack_require__(5) ,
+	   object: __webpack_require__(6),
+	   string: __webpack_require__(19)
 	}
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -166,7 +172,7 @@
 	}
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	'use exports'
@@ -193,19 +199,19 @@
 	}
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
-	var prefixInfo  = __webpack_require__(6)
-	var cssPrefixFn = __webpack_require__(8)
+	var prefixInfo  = __webpack_require__(7)
+	var cssPrefixFn = __webpack_require__(9)
 	
-	var HYPHENATE   = __webpack_require__(12)
-	var CAMELIZE   = __webpack_require__(10)
-	var HAS_OWN     = __webpack_require__(15)
-	var IS_OBJECT   = __webpack_require__(16)
-	var IS_FUNCTION = __webpack_require__(17)
+	var HYPHENATE   = __webpack_require__(13)
+	var CAMELIZE   = __webpack_require__(11)
+	var HAS_OWN     = __webpack_require__(16)
+	var IS_OBJECT   = __webpack_require__(17)
+	var IS_FUNCTION = __webpack_require__(18)
 	
 	var applyPrefix = function(target, property, value, normalizeFn){
 	    cssPrefixFn(property).forEach(function(p){
@@ -230,7 +236,7 @@
 	}
 	
 	var CONFIG = {
-	    cssUnitless: __webpack_require__(4)
+	    cssUnitless: __webpack_require__(5)
 	}
 	
 	/**
@@ -423,12 +429,12 @@
 	module.exports = TO_STYLE_OBJECT
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var toUpperFirst = __webpack_require__(7)
+	var toUpperFirst = __webpack_require__(8)
 	
 	var re         = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/
 	
@@ -479,7 +485,7 @@
 	module.exports = prefixInfo
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -491,24 +497,24 @@
 	}
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(9)()
+	module.exports = __webpack_require__(10)()
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
-	var camelize     = __webpack_require__(10)
-	var hyphenate    = __webpack_require__(12)
-	var toLowerFirst = __webpack_require__(14)
-	var toUpperFirst = __webpack_require__(7)
+	var camelize     = __webpack_require__(11)
+	var hyphenate    = __webpack_require__(13)
+	var toLowerFirst = __webpack_require__(15)
+	var toUpperFirst = __webpack_require__(8)
 	
-	var prefixInfo = __webpack_require__(6)
-	var prefixProperties = __webpack_require__(3)
+	var prefixInfo = __webpack_require__(7)
+	var prefixProperties = __webpack_require__(4)
 	
 	var docStyle = typeof document == 'undefined'?
 	                {}:
@@ -582,7 +588,7 @@
 	}
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
@@ -591,7 +597,7 @@
 	       return letter ? letter.toUpperCase(): ''
 	   }
 	
-	var hyphenRe = __webpack_require__(11)
+	var hyphenRe = __webpack_require__(12)
 	
 	module.exports = function(str){
 	   return str?
@@ -600,25 +606,25 @@
 	}
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = /[-\s]+(.)?/g
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
-	var separate = __webpack_require__(13)
+	var separate = __webpack_require__(14)
 	
 	module.exports = function(name){
 	   return separate(name).toLowerCase()
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -640,7 +646,7 @@
 	}
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -652,7 +658,7 @@
 	}
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -664,7 +670,7 @@
 	}
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -678,7 +684,7 @@
 
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -691,13 +697,13 @@
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
-	var toStyleObject = __webpack_require__(5)
-	var hasOwn        = __webpack_require__(15)
+	var toStyleObject = __webpack_require__(6)
+	var hasOwn        = __webpack_require__(16)
 	
 	/**
 	 * @ignore
@@ -727,10 +733,10 @@
 	}
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  Copyright (c) 2015 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
@@ -771,9 +777,9 @@
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
@@ -781,15 +787,15 @@
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
 	 */
 	
-	var slice = __webpack_require__(21)
-	var flatten = __webpack_require__(23)
+	var slice = __webpack_require__(22)
+	var flatten = __webpack_require__(24)
 	
 	/**
 	 * This function lets us create virtual nodes using a simple
@@ -859,14 +865,14 @@
 
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = exports = __webpack_require__(22);
+	module.exports = exports = __webpack_require__(23);
 
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 	
@@ -905,7 +911,7 @@
 
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -975,7 +981,7 @@
 
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	/**
@@ -1015,7 +1021,7 @@
 
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	
@@ -1054,7 +1060,7 @@
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1063,31 +1069,31 @@
 	
 	exports.tree =
 	exports.scene =
-	exports.deku = __webpack_require__(27)
+	exports.deku = __webpack_require__(28)
 	
 	/**
 	 * Render scenes to the DOM.
 	 */
 	
 	if (typeof document !== 'undefined') {
-	  exports.render = __webpack_require__(29)
+	  exports.render = __webpack_require__(30)
 	}
 	
 	/**
 	 * Render scenes to a string
 	 */
 	
-	exports.renderString = __webpack_require__(54)
+	exports.renderString = __webpack_require__(55)
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Module dependencies.
 	 */
 	
-	var Emitter = __webpack_require__(28)
+	var Emitter = __webpack_require__(29)
 	
 	/**
 	 * Expose `scene`.
@@ -1171,7 +1177,7 @@
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 	
@@ -1338,24 +1344,24 @@
 
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * Dependencies.
 	 */
 	
-	var raf = __webpack_require__(30)
-	var isDom = __webpack_require__(31)
-	var uid = __webpack_require__(32)
-	var keypath = __webpack_require__(33)
-	var events = __webpack_require__(34)
-	var svg = __webpack_require__(35)
-	var defaults = __webpack_require__(38)
-	var forEach = __webpack_require__(39)
-	var assign = __webpack_require__(43)
-	var reduce = __webpack_require__(44)
-	var nodeType = __webpack_require__(48)
+	var raf = __webpack_require__(31)
+	var isDom = __webpack_require__(32)
+	var uid = __webpack_require__(33)
+	var keypath = __webpack_require__(34)
+	var events = __webpack_require__(35)
+	var svg = __webpack_require__(36)
+	var defaults = __webpack_require__(39)
+	var forEach = __webpack_require__(40)
+	var assign = __webpack_require__(44)
+	var reduce = __webpack_require__(45)
+	var nodeType = __webpack_require__(49)
 	
 	/**
 	 * Expose `dom`.
@@ -2650,7 +2656,7 @@
 
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	/**
@@ -2690,7 +2696,7 @@
 
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	/*global window*/
@@ -2711,7 +2717,7 @@
 
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	/** generate unique id for selector */
@@ -2722,7 +2728,7 @@
 	};
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory){
@@ -3006,7 +3012,7 @@
 
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports) {
 
 	/**
@@ -3056,18 +3062,18 @@
 
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-	  isElement: __webpack_require__(36).isElement,
-	  isAttribute: __webpack_require__(37),
+	  isElement: __webpack_require__(37).isElement,
+	  isAttribute: __webpack_require__(38),
 	  namespace: 'http://www.w3.org/2000/svg'
 	}
 
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	/**
@@ -3109,7 +3115,7 @@
 
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports) {
 
 	/**
@@ -3174,7 +3180,7 @@
 
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -3197,13 +3203,13 @@
 
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var forEachArray = __webpack_require__(40),
-	    forEachObject = __webpack_require__(42);
+	var forEachArray = __webpack_require__(41),
+	    forEachObject = __webpack_require__(43);
 	
 	/**
 	 * # ForEach
@@ -3224,12 +3230,12 @@
 	};
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bindInternal3 = __webpack_require__(41);
+	var bindInternal3 = __webpack_require__(42);
 	
 	/**
 	 * # For Each
@@ -3251,7 +3257,7 @@
 
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3268,12 +3274,12 @@
 
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bindInternal3 = __webpack_require__(41);
+	var bindInternal3 = __webpack_require__(42);
 	
 	/**
 	 * # For Each
@@ -3297,7 +3303,7 @@
 
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3337,13 +3343,13 @@
 
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var reduceArray = __webpack_require__(45),
-	    reduceObject = __webpack_require__(47);
+	var reduceArray = __webpack_require__(46),
+	    reduceObject = __webpack_require__(48);
 	
 	/**
 	 * # Reduce
@@ -3366,12 +3372,12 @@
 	};
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bindInternal4 = __webpack_require__(46);
+	var bindInternal4 = __webpack_require__(47);
 	
 	/**
 	 * # Reduce
@@ -3407,7 +3413,7 @@
 
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3424,12 +3430,12 @@
 
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var bindInternal4 = __webpack_require__(46);
+	var bindInternal4 = __webpack_require__(47);
 	
 	/**
 	 * # Reduce
@@ -3467,10 +3473,10 @@
 
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var type = __webpack_require__(49)
+	var type = __webpack_require__(50)
 	
 	/**
 	 * Returns the type of a virtual node
@@ -3489,7 +3495,7 @@
 
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -3529,10 +3535,10 @@
 	  return typeof val;
 	};
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(51).Buffer))
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
@@ -3543,9 +3549,11 @@
 	 */
 	/* eslint-disable no-proto */
 	
-	var base64 = __webpack_require__(51)
-	var ieee754 = __webpack_require__(52)
-	var isArray = __webpack_require__(53)
+	'use strict'
+	
+	var base64 = __webpack_require__(52)
+	var ieee754 = __webpack_require__(53)
+	var isArray = __webpack_require__(54)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -3625,8 +3633,10 @@
 	    return new Buffer(arg)
 	  }
 	
-	  this.length = 0
-	  this.parent = undefined
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+	    this.length = 0
+	    this.parent = undefined
+	  }
 	
 	  // Common case.
 	  if (typeof arg === 'number') {
@@ -3757,6 +3767,10 @@
 	if (Buffer.TYPED_ARRAY_SUPPORT) {
 	  Buffer.prototype.__proto__ = Uint8Array.prototype
 	  Buffer.__proto__ = Uint8Array
+	} else {
+	  // pre-set for values that may exist in the future
+	  Buffer.prototype.length = undefined
+	  Buffer.prototype.parent = undefined
 	}
 	
 	function allocate (that, length) {
@@ -3906,10 +3920,6 @@
 	  }
 	}
 	Buffer.byteLength = byteLength
-	
-	// pre-set for values that may exist in the future
-	Buffer.prototype.length = undefined
-	Buffer.prototype.parent = undefined
 	
 	function slowToString (encoding, start, end) {
 	  var loweredCase = false
@@ -5002,7 +5012,7 @@
 	      }
 	
 	      // valid surrogate pair
-	      codePoint = leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00 | 0x10000
+	      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
 	    } else if (leadSurrogate) {
 	      // valid bmp char, but last char was a lead
 	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
@@ -5080,10 +5090,10 @@
 	  return i
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50).Buffer, (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(51).Buffer, (function() { return this; }())))
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
@@ -5213,7 +5223,7 @@
 
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -5303,51 +5313,23 @@
 
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports) {
 
+	var toString = {}.toString;
 	
-	/**
-	 * isArray
-	 */
-	
-	var isArray = Array.isArray;
-	
-	/**
-	 * toString
-	 */
-	
-	var str = Object.prototype.toString;
-	
-	/**
-	 * Whether or not the given `val`
-	 * is an array.
-	 *
-	 * example:
-	 *
-	 *        isArray([]);
-	 *        // > true
-	 *        isArray(arguments);
-	 *        // > false
-	 *        isArray('');
-	 *        // > false
-	 *
-	 * @param {mixed} val
-	 * @return {bool}
-	 */
-	
-	module.exports = isArray || function (val) {
-	  return !! val && '[object Array]' == str.call(val);
+	module.exports = Array.isArray || function (arr) {
+	  return toString.call(arr) == '[object Array]';
 	};
 
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var defaults = __webpack_require__(38)
-	var nodeType = __webpack_require__(48)
-	var type = __webpack_require__(49)
+	var defaults = __webpack_require__(39)
+	var nodeType = __webpack_require__(49)
+	var type = __webpack_require__(50)
 	
 	/**
 	 * Expose `stringify`.
@@ -5480,144 +5462,131 @@
 
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** @jsx dom */
 	'use strict';
 	
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _magicVirtualElement = __webpack_require__(1);
-	
-	var _magicVirtualElement2 = _interopRequireDefault(_magicVirtualElement);
-	
-	var _swipeJsIso = __webpack_require__(56);
+	var _swipeJsIso = __webpack_require__(57);
 	
 	var _swipeJsIso2 = _interopRequireDefault(_swipeJsIso);
 	
-	var propTypes = {
-	  classPrefix: {
-	    type: 'string'
-	  },
-	  startSlide: {
-	    type: 'number'
-	  },
-	  slideToIndex: {
-	    type: 'number'
-	  },
-	  speed: {
-	    type: 'number'
-	  },
-	  auto: {
-	    type: 'number'
-	  },
-	  continuous: {
-	    type: 'boolean'
-	  },
-	  callback: {
-	    type: 'function'
-	  },
-	  transitionEnd: {
-	    type: 'function'
-	  }
-	};
+	var _virtualElement = __webpack_require__(21);
 	
-	var defaultProps = {
-	  classPrefix: 'deku-swipe'
-	};
+	var _virtualElement2 = _interopRequireDefault(_virtualElement);
 	
-	function initialState() {
-	  return {};
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
 	}
 	
-	function afterMount(_ref, el, setState) {
-	  var props = _ref.props;
-	  var arrows = props.arrows;
-	  var startSlide = props.startSlide;
-	  var speed = props.speed;
-	  var auto = props.auto;
-	  var continuous = props.continuous;
-	  var callback = props.callback;
-	  var transitionEnd = props.transitionEnd;
-	  var classPrefix = props.classPrefix;
+	/** @jsx element */
 	
-	  var swipe = (0, _swipeJsIso2['default'])(document.getElementById('deku-swipe'), {
-	    startSlide: startSlide,
-	    speed: speed,
-	    auto: auto,
-	    continuous: continuous,
-	    callback: callback,
-	    transitionEnd: transitionEnd
-	  });
+	var Swipe = {
+	  initialState: function initialState() {
+	    return { secondsElapsed: 0 };
+	  },
 	
-	  if (arrows) {
-	    var prev = el.querySelector('.' + classPrefix + '__arrows--prev');
-	    var next = el.querySelector('.' + classPrefix + '__arrows--next');
+	  propTypes: {
+	    classPrefix: {
+	      type: 'string'
+	    },
+	    startSlide: {
+	      type: 'number'
+	    },
+	    slideToIndex: {
+	      type: 'number'
+	    },
+	    speed: {
+	      type: 'number'
+	    },
+	    auto: {
+	      type: 'number'
+	    },
+	    continuous: {
+	      type: 'boolean'
+	    },
+	    callback: {
+	      type: 'function'
+	    },
+	    transitionEnd: {
+	      type: 'function'
+	    }
+	  },
 	
-	    prev.addEventListener('click', function (e) {
-	      e.preventDefault();
-	      swipe.prev();
-	    });
+	  defaultProps: {
+	    classPrefix: 'deku-swipe'
+	  },
 	
-	    next.addEventListener('click', function (e) {
-	      e.preventDefault();
-	      swipe.next();
-	    });
-	  }
-	}
+	  render: function render(component) {
+	    var props = component.props;
+	    var state = component.state;
+	    var arrows = props.arrows;
+	    var arrowNext = props.arrowNext;
+	    var arrowPrev = props.arrowPrev;
+	    var children = props.children;
+	    var classPrefix = props.classPrefix;
 	
-	function render(_ref2) {
-	  var props = _ref2.props;
-	  var state = _ref2.state;
-	  var arrows = props.arrows;
-	  var arrowNext = props.arrowNext;
-	  var arrowPrev = props.arrowPrev;
-	  var children = props.children;
-	  var classPrefix = props.classPrefix;
+	    function getArrows() {
+	      if (!arrows) return null;
 	
-	  function getArrows() {
-	    if (!arrows) {
-	      return null;
+	      return (0, _virtualElement2.default)('div', { 'class': classPrefix + '__arrows', 'class': 'swipe-buttons' }, (0, _virtualElement2.default)('button', { 'class': classPrefix + '__arrows  ' + classPrefix + '__arrows--prev' }, arrowPrev || null), (0, _virtualElement2.default)('button', { 'class': classPrefix + '__arrows  ' + classPrefix + '__arrows--next' }, arrowNext || null));
 	    }
 	
-	    return (0, _magicVirtualElement2['default'])(
-	      'div',
-	      { 'class': classPrefix + '__arrows', 'class': 'swipe-buttons' },
-	      (0, _magicVirtualElement2['default'])(
-	        'button',
-	        { 'class': classPrefix + '__arrows  ' + classPrefix + '__arrows--prev' },
-	        arrowPrev || null
-	      ),
-	      (0, _magicVirtualElement2['default'])(
-	        'button',
-	        { 'class': classPrefix + '__arrows  ' + classPrefix + '__arrows--next' },
-	        arrowNext || null
-	      )
-	    );
+	    return (0, _virtualElement2.default)('div', { id: 'deku-swipe', 'class': '' + classPrefix }, (0, _virtualElement2.default)('div', { 'class': classPrefix + '__wrap' }, children), getArrows());
+	  },
+	  afterUpdate: function afterUpdate(component) {
+	    var props = component.props;
+	    var state = component.state;
+	  },
+	  afterMount: function afterMount(component, el, setState) {
+	    var props = component.props;
+	    var state = component.state;
+	    var arrows = props.arrows;
+	    var startSlide = props.startSlide;
+	    var speed = props.speed;
+	    var auto = props.auto;
+	    var continuous = props.continuous;
+	    var callback = props.callback;
+	    var transitionEnd = props.transitionEnd;
+	    var classPrefix = props.classPrefix;
+	
+	    var swipe = (0, _swipeJsIso2.default)(document.getElementById('deku-swipe'), {
+	      startSlide: startSlide,
+	      speed: speed,
+	      auto: auto,
+	      continuous: continuous,
+	      callback: callback,
+	      transitionEnd: transitionEnd
+	    });
+	
+	    if (arrows) {
+	      var prev = el.querySelector('.' + classPrefix + '__arrows--prev');
+	      var next = el.querySelector('.' + classPrefix + '__arrows--next');
+	
+	      prev.addEventListener('click', function (e) {
+	        e.preventDefault();
+	        swipe.prev();
+	      });
+	
+	      next.addEventListener('click', function (e) {
+	        e.preventDefault();
+	        swipe.next();
+	      });
+	    }
+	  },
+	  beforeUnmount: function beforeUnmount(component) {
+	    clearInterval(component.interval);
 	  }
+	};
 	
-	  return (0, _magicVirtualElement2['default'])(
-	    'div',
-	    { id: 'deku-swipe', 'class': '' + classPrefix },
-	    (0, _magicVirtualElement2['default'])(
-	      'div',
-	      { 'class': classPrefix + '__wrap' },
-	      children
-	    ),
-	    getArrows()
-	  );
-	}
-	
-	exports['default'] = { afterMount: afterMount, initialState: initialState, propTypes: propTypes, defaultProps: defaultProps, render: render };
-	module.exports = exports['default'];
+	exports.default = Swipe;
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
 	/*
