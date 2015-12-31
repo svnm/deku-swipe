@@ -1,5 +1,9 @@
 # deku-swipe
+
 [Swipe.js](http://swipejs.com) as a deku component
+
+[![npm version](https://badge.fury.io/js/deku-swipe.svg)](https://badge.fury.io/js/deku-swipe)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Installation
 
@@ -65,8 +69,16 @@ render(app, document.getElementById('root'))
 
 - **continuous** Boolean *(default:true)* - create an infinite feel with no endpoints
 
-- *callback** Function - runs at slide change.
+- **callback** Function - runs at slide change.
 
 - **transitionEnd** Function - runs at the end slide transition.
 
-**MIT**
+## Development
+    npm install
+    npm run build
+    npm test
+    npm start
+
+## License
+
+[MIT](http://isekivacenz.mit-license.org/)
